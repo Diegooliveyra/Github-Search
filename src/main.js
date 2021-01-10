@@ -10,6 +10,6 @@
 /*!*********************************!*\
   !*** ./public/script/script.js ***!
   \*********************************/
-eval("const teste = 'ola'\r\nconsole.log(teste)\r\n\n\n//# sourceURL=webpack://github-search/./public/script/script.js?");
+eval("\n\n//# sourceURL=webpack://github-search/./public/script/script.js?");
 /******/ })()
 ;

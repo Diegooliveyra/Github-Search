@@ -1,0 +1,21 @@
+//Mixin de media-querie
+
+$larger-device: 1024px;
+$medium-device: 768px;
+$small-device: 480px;
+
+@mixin device($size) {
+  @if $size == desktop {
+    @media screen and (max-width: #{$larger-device}) {
+      @content;
+    }
+  } @else if $size == tablet {
+    @media screen and (min-width: #{$medium-device}) and (max-width: $larger-device - 1) {
+      @content;
+    }
+  } @else if $size == mobile {
+    @media screen and(max-width: $medium-device - 1) {
+      @content;
+    }
+  }
+}
