@@ -1,0 +1,16 @@
+.btn {
+  background-color: $purple-color;
+  color: #fff;
+  font-size: em(16);
+  font-weight: 700;
+  border: 0;
+  border-radius: 5px;
+  padding: $gap-smaller $gap-small;
+  cursor: pointer;
+  outline: none;
+  transition: .4s ease;
+  &:hover {
+    background-color: $purple-color-dark;
+  }
+
+}

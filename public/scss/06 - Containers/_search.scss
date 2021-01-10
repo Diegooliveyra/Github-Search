@@ -1,0 +1,29 @@
+.search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  
+  &__image {
+    margin-bottom: $gap-larger;
+    animation: down .8s ease forwards;
+  }
+  &__input {
+    display: flex;
+    flex-direction: column;
+    animation: up .8s ease forwards;
+    margin-bottom: $gap-larger;
+    & input {
+      background: $background-color;
+      color: $gray-color;
+      text-align: center;
+      border: 0;
+      border-bottom: 4px solid $purple-color;
+      font-size: em(18);
+      padding: $gap-smaller $gap-small;
+      margin-bottom: $gap-medium;
+      outline: none;
+    }
+  }
+}

@@ -6,6 +6,7 @@
 //Tools
 @import "./02 - Tools/mixins";
 @import "./02 - Tools/typography";
+@import "./02 - Tools/animations";
 
 //Generic 
 @import "./03 - Generic/box-sizing";
@@ -17,7 +18,8 @@
 
 //Components
 @import "./05 - Componentes/container";
-
+@import "./05 - Componentes/buttons";
 
 
 //containers
+@import "./06\ -\ Containers/search";
