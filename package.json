@@ -1,0 +1,28 @@
+{
+  "name": "github-search",
+  "version": "1.0.0",
+  "description": "Projeto de busca de usuarios e repositorios do github através da sua API ",
+  "main": "index.html",
+  "scripts": {
+    "build": "webpack --mode production",
+    "dev": "webpack --mode development --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Diegooliveyra/Github-Search.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Diegooliveyra/Github-Search/issues"
+  },
+  "homepage": "https://github.com/Diegooliveyra/Github-Search#readme",
+  "devDependencies": {
+    "eslint": "^7.17.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-prettier": "^7.1.0",
+    "eslint-plugin-import": "^2.22.1",
+    "webpack": "^5.12.2",
+    "webpack-cli": "^4.3.1"
+  },
+  "dependencies": {}
+}
