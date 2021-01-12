@@ -1,0 +1,60 @@
+.user {
+  max-width: 650px;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  justify-content: center;
+  align-items: center;
+  color: $gray-color;
+  &__avatar {
+    display: flex;
+    justify-content: center;
+    border-radius: 50%;
+  }
+  &__profile {
+    padding: 0 $gap-medium;
+    & h2 {
+      font-size: em(24);
+      line-height: em(40, 24);
+      font-weight: 700;
+      color: $purple-color;
+    }
+    & > p {
+      margin-bottom: $gap-small;
+    }
+  }
+  &__location {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 6px;
+    & .iconify {
+      color: $purple-color;
+    }
+  }
+
+  &__data {
+    display: flex;
+    gap: 10px;
+    & .iconify {
+      color: $purple-color;
+    }
+  }
+  &__branchs {
+    background-color: $dark-color;
+    text-align: center;
+    color: $gray-color;
+    padding: $gap-small $gap-smaller;
+
+    & h3 {
+      margin-bottom: $gap-small;
+    }
+  }
+  &__total-branchs {
+    display: flex;
+    justify-content: center;
+    font-size: em(22);
+    gap: 10px;
+    & .iconify {
+      color: $purple-color;
+    }
+  }
+}

@@ -149,6 +149,24 @@ a {
   background-color: #7b46c0;
 }
 
+.btn-search {
+  border: 0;
+  width: 20px;
+  height: 20px;
+  background-color: transparent;
+  background-image: url(/public/assets/search.svg);
+  background-repeat: no-repeat;
+  margin-left: 10px;
+  cursor: pointer;
+  -webkit-transition: .4s ease;
+  transition: .4s ease;
+}
+
+.btn-search:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
 .search {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -195,5 +213,116 @@ a {
   padding: 10px 20px;
   margin-bottom: 30px;
   outline: none;
+}
+
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 30px 0;
+}
+
+.header__input input {
+  background: #232324;
+  color: #B2B2B2;
+  text-align: center;
+  border: 0;
+  border-bottom: 4px solid #8752CC;
+  font-size: 1.125em;
+  padding: 10px 20px;
+  margin-bottom: 30px;
+  outline: none;
+}
+
+.user {
+  max-width: 650px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 2fr 1fr;
+      grid-template-columns: 1fr 2fr 1fr;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #B2B2B2;
+}
+
+.user__avatar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-radius: 50%;
+}
+
+.user__profile {
+  padding: 0 30px;
+}
+
+.user__profile h2 {
+  font-size: 1.5em;
+  line-height: 1.66667em;
+  font-weight: 700;
+  color: #8752CC;
+}
+
+.user__profile > p {
+  margin-bottom: 20px;
+}
+
+.user__location {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+
+.user__location .iconify {
+  color: #8752CC;
+}
+
+.user__data {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 10px;
+}
+
+.user__data .iconify {
+  color: #8752CC;
+}
+
+.user__branchs {
+  background-color: #201F1F;
+  text-align: center;
+  color: #B2B2B2;
+  padding: 20px 10px;
+}
+
+.user__branchs h3 {
+  margin-bottom: 20px;
+}
+
+.user__total-branchs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 1.375em;
+  gap: 10px;
+}
+
+.user__total-branchs .iconify {
+  color: #8752CC;
 }
 /*# sourceMappingURL=main.css.map */
