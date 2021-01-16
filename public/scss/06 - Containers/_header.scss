@@ -1,17 +1,35 @@
 .header {
   display: flex;
   justify-content: space-between;
-  padding: $gap-medium 0;
+  align-items: center;
+  padding: $gap-medium $gap-smaller;
+  position: relative;
+  & img {
+    max-width: 150px;
+    @include device(mobile) {
+      padding: $gap-smaller;
+    }
+  }
   &__input input {
       background: $background-color;
       color: $gray-color;
       text-align: center;
       border: 0;
       border-bottom: 4px solid $purple-color;
-      font-size: em(18);
+      font-size: em(16);
       padding: $gap-smaller $gap-small;
       margin-bottom: $gap-medium;
       outline: none;
+      @include device(mobile) {
+        position: absolute;
+        display: none;
+        width: 100%;
+        bottom: -60px;
+        left: 0;
+        animation: down 1s ease forwards;
+      }
+    } & .active {
+      display: inline-block;
     }
   
 }

@@ -1,0 +1,38 @@
+.repositories {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  color: $gray-color;
+  margin-top: $gap-xlarger;
+  animation: up 1s ease forwards;
+  @include device(mobile) {
+    margin-top: $gap-medium;
+  }
+  &__repositorie {
+    width: 320px;
+    min-height: 150px;
+    padding: $gap-small;
+    background-color: $dark-color;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+    & h2 {
+      font-size: em(18);
+      font-weight: 700;
+      margin-bottom: $gap-smaller;
+    }
+    & p {
+      font-size: em(14);
+    }
+  }
+  &__info {
+    display: flex;
+    gap: 10px;
+    font-size: em(16);
+    & .iconify {
+      color: $purple-color;
+    }
+  }
+}

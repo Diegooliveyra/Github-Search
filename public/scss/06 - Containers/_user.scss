@@ -5,6 +5,14 @@
   justify-content: center;
   align-items: center;
   color: $gray-color;
+  margin-top: $gap-larger;
+  animation: down 1s ease forwards;
+  @include device(mobile) {
+    gap: 30px;
+    display: flex;
+    flex-direction: column;
+    margin-top: $gap-medium;
+  }
   &__avatar {
     display: flex;
     justify-content: center;
@@ -25,7 +33,7 @@
   &__location {
     display: flex;
     gap: 10px;
-    margin-bottom: 6px;
+    margin-bottom: 8px;
     & .iconify {
       color: $purple-color;
     }
@@ -45,7 +53,7 @@
     padding: $gap-small $gap-smaller;
 
     & h3 {
-      margin-bottom: $gap-small;
+      margin-bottom: $gap-smaller;
     }
   }
   &__total-branchs {

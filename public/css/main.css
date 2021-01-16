@@ -151,20 +151,29 @@ a {
 
 .btn-search {
   border: 0;
-  width: 20px;
-  height: 20px;
+  width: 25px;
+  height: 25px;
   background-color: transparent;
   background-image: url(/public/assets/search.svg);
   background-repeat: no-repeat;
   margin-left: 10px;
   cursor: pointer;
+  outline: none;
   -webkit-transition: .4s ease;
   transition: .4s ease;
+  opacity: .3;
 }
 
 .btn-search:hover {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
+}
+
+@media screen and (max-width: 767px) {
+  .btn-search {
+    margin-right: 20px;
+    background-size: cover;
+  }
 }
 
 .search {
@@ -222,7 +231,21 @@ a {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding: 30px 0;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 30px 10px;
+  position: relative;
+}
+
+.header img {
+  max-width: 150px;
+}
+
+@media screen and (max-width: 767px) {
+  .header img {
+    padding: 10px;
+  }
 }
 
 .header__input input {
@@ -231,10 +254,26 @@ a {
   text-align: center;
   border: 0;
   border-bottom: 4px solid #8752CC;
-  font-size: 1.125em;
+  font-size: 1em;
   padding: 10px 20px;
   margin-bottom: 30px;
   outline: none;
+}
+
+@media screen and (max-width: 767px) {
+  .header__input input {
+    position: absolute;
+    display: none;
+    width: 100%;
+    bottom: -60px;
+    left: 0;
+    -webkit-animation: down 1s ease forwards;
+            animation: down 1s ease forwards;
+  }
+}
+
+.header .active {
+  display: inline-block;
 }
 
 .user {
@@ -250,6 +289,23 @@ a {
       -ms-flex-align: center;
           align-items: center;
   color: #B2B2B2;
+  margin-top: 50px;
+  -webkit-animation: down 1s ease forwards;
+          animation: down 1s ease forwards;
+}
+
+@media screen and (max-width: 767px) {
+  .user {
+    gap: 30px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin-top: 30px;
+  }
 }
 
 .user__avatar {
@@ -282,7 +338,7 @@ a {
   display: -ms-flexbox;
   display: flex;
   gap: 10px;
-  margin-bottom: 6px;
+  margin-bottom: 8px;
 }
 
 .user__location .iconify {
@@ -308,7 +364,7 @@ a {
 }
 
 .user__branchs h3 {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .user__total-branchs {
@@ -323,6 +379,70 @@ a {
 }
 
 .user__total-branchs .iconify {
+  color: #8752CC;
+}
+
+.repositories {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 20px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #B2B2B2;
+  margin-top: 100px;
+  -webkit-animation: up 1s ease forwards;
+          animation: up 1s ease forwards;
+}
+
+@media screen and (max-width: 767px) {
+  .repositories {
+    margin-top: 30px;
+  }
+}
+
+.repositories__repositorie {
+  width: 320px;
+  min-height: 150px;
+  padding: 20px;
+  background-color: #201F1F;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.repositories__repositorie h2 {
+  font-size: 1.125em;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.repositories__repositorie p {
+  font-size: 0.875em;
+}
+
+.repositories__info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 10px;
+  font-size: 1em;
+}
+
+.repositories__info .iconify {
   color: #8752CC;
 }
 /*# sourceMappingURL=main.css.map */
