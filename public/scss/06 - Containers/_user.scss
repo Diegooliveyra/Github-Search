@@ -1,7 +1,7 @@
 .user {
-  max-width: 650px;
+  max-width: 850px;
   display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-columns: minmax(100px, 170px) minmax(200px, auto)  minmax(70px, 150px);
   justify-content: center;
   align-items: center;
   color: $gray-color;
@@ -17,6 +17,7 @@
     display: flex;
     justify-content: center;
     border-radius: 50%;
+    overflow: hidden;
   }
   &__profile {
     padding: 0 $gap-medium;

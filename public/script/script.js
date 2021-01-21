@@ -1,9 +1,4 @@
-import Fetch from './modules/userFetch.js';
+import GetUser from './modules/get-user.js';
 
-const userName = document.querySelector('[data-search="name"]').value;
-
-const user = new Fetch(`https://api.github.com/${userName}/diegooliveyra`);
-user.createUserProfile();
-
-const repository = new Fetch(`https://api.github.com/${userName}/diegooliveyra/repos`);
-repository.createUserRepository();
+const newUser = new GetUser('[data-search="btn"]', '[data-search="name"]');
+newUser.init();
