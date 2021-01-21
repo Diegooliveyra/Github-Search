@@ -2,13 +2,21 @@
   width: 100%;
   padding: $gap-small;
   background-color: $dark-color;
-  margin-top: $gap-larger;
-  display: flex;
+  margin-top: $gap-medium;
+  display: none;
   justify-content: center;
   align-items: center;
   color: $gray-color;
   & ul {
     display: flex;
     gap: $gap-smaller;
+  }
+  & .iconify {
+    color: $gray-color;
+    width: 20px;
+    height: 20px;
+  }
+  &.active {
+    display: flex;
   }
 }

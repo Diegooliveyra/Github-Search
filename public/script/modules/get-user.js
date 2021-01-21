@@ -106,9 +106,11 @@ export default class GetUser {
 
   loader() {
     const loader = document.querySelector("[data-loader]");
+    const footer = document.querySelector(".footer");
     loader.classList.remove("hidden");
     setTimeout(() => {
         loader.classList.add("hidden");
+        footer.classList.add('active');
         this.profileSection.classList.add('active');
         this.repositorySection.classList.add('active');
     }, 2000);

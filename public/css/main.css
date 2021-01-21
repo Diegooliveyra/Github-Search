@@ -552,10 +552,8 @@ a {
   width: 100%;
   padding: 20px;
   background-color: #201F1F;
-  margin-top: 50px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  margin-top: 30px;
+  display: none;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -570,5 +568,17 @@ a {
   display: -ms-flexbox;
   display: flex;
   gap: 10px;
+}
+
+.footer .iconify {
+  color: #B2B2B2;
+  width: 20px;
+  height: 20px;
+}
+
+.footer.active {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 /*# sourceMappingURL=main.css.map */
