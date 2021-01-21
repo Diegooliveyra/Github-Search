@@ -9,6 +9,7 @@ export default class GetUser {
   getUserName() {
     this.userName = document.querySelector(this.inputValue).value;
     this.userFetch();
+    this.starFetch();
     this.searchPage.classList.remove('active');
   }
 
@@ -19,6 +20,13 @@ export default class GetUser {
   async userFetch() {
     const response = await fetch(`https://api.github.com/users/${this.userName}`);
     this.jsonUser = await response.json();
+    this.createProfile();
+  }
+
+  async starFetch() {
+    const response = await fetch(`https://api.github.com/users/${this.userName}/starred`);
+    this.jsonStar = await response.json();
+    this.totalStar = this.jsonStar.length;
     this.createProfile();
   }
 
@@ -49,7 +57,7 @@ export default class GetUser {
         <span class="iconify" data-icon="fluent:people-team-28-regular" data-inline="false"></span>
         <p>${this.jsonUser.following}</p>
         <span class="iconify" data-icon="dashicons:star-filled" data-inline="false"></span>
-        <p>${this.jsonUser.starred}</p>
+        <p>${this.totalStar}</p>
       </div>
     </div>
     <div class="user__branchs">
