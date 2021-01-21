@@ -7,6 +7,7 @@ export default class GetUser {
   }
 
   getUserName() {
+    this.loader();
     this.userName = document.querySelector(this.inputValue).value;
     this.userFetch();
     this.starFetch();
@@ -52,10 +53,10 @@ export default class GetUser {
         <span class="iconify" data-icon="fa-solid:map-marker-alt" data-inline="false"></span>
         <p>${this.jsonUser.location}</p>
         ${
-          this.jsonUser.company
-            ? '<span class="iconify" data-icon="ic:baseline-business-center" data-inline="false"></span>'
-            : ''
-        }
+  this.jsonUser.company
+    ? '<span class="iconify" data-icon="ic:baseline-business-center" data-inline="false"></span>'
+    : ''
+}
         <p>${this.jsonUser.company || ''}</p>
       </div>
       <div class="user__data">
@@ -81,12 +82,12 @@ export default class GetUser {
 
   createRepositories() {
     this.repositorySection = document.querySelector('.repositories');
-    this.jsonRepositorie.forEach(repository => {
+    this.jsonRepositorie.forEach((repository) => {
       const repositoryMarkup = `
       <div class="repositories__repositorie">
       <div class="repositories__content">
         <h2>${repository.name}</h2>
-        <p>${repository.description}</p>
+        <p>${repository.description || ''}</p>
       </div>
       <div class="repositories__info">
         <span class="iconify" data-icon="dashicons:star-filled" data-inline="false"></span>
@@ -98,8 +99,19 @@ export default class GetUser {
       `;
       this.repositorySection.innerHTML += repositoryMarkup;
       this.profileSection.parentNode.insertBefore(
-        this.repositorySection, this.profileSection.nextSibling);
+        this.repositorySection, this.profileSection.nextSibling
+      );
     });
+  }
+
+  loader() {
+    const loader = document.querySelector("[data-loader]");
+    loader.classList.remove("hidden");
+    setTimeout(() => {
+        loader.classList.add("hidden");
+        this.profileSection.classList.add('active');
+        this.repositorySection.classList.add('active');
+    }, 1000);
   }
 
   init() {

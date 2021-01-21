@@ -35,3 +35,27 @@
     display: flex;
   }
 }
+
+.loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60vh;
+  &__spinner {
+    border: 8px solid rgba(221, 221, 221, 0.1);
+    border-left-color: $purple-color;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+  }
+  &.hidden {
+    display: none;
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
