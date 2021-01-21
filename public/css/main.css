@@ -564,4 +564,11 @@ a {
           align-items: center;
   color: #B2B2B2;
 }
+
+.footer ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 10px;
+}
 /*# sourceMappingURL=main.css.map */

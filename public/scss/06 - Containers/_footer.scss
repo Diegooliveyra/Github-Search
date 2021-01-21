@@ -7,4 +7,8 @@
   justify-content: center;
   align-items: center;
   color: $gray-color;
+  & ul {
+    display: flex;
+    gap: $gap-smaller;
+  }
 }
