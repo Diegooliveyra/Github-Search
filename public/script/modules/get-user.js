@@ -10,6 +10,7 @@ export default class GetUser {
     this.userName = document.querySelector(this.inputValue).value;
     this.userFetch();
     this.starFetch();
+    this.repositorieFetch();
     this.searchPage.classList.remove('active');
   }
 
@@ -30,9 +31,15 @@ export default class GetUser {
     this.createProfile();
   }
 
+  async repositorieFetch() {
+    const response = await fetch(`https://api.github.com/users/${this.userName}/repos`);
+    this.jsonRepositorie = await response.json();
+    this.createRepositories();
+  }
+
   createProfile() {
-    const profileSection = document.querySelector('section');
-    profileSection.classList.add('user');
+    this.profileSection = document.querySelector('.user');
+    this.profileSection.classList.add('user');
     const header = document.querySelector('.header');
     const profileMarkup = `
       <div class="user__avatar">
@@ -45,10 +52,10 @@ export default class GetUser {
         <span class="iconify" data-icon="fa-solid:map-marker-alt" data-inline="false"></span>
         <p>${this.jsonUser.location}</p>
         ${
-  this.jsonUser.company
-    ? '<span class="iconify" data-icon="ic:baseline-business-center" data-inline="false"></span>'
-    : ''
-}
+          this.jsonUser.company
+            ? '<span class="iconify" data-icon="ic:baseline-business-center" data-inline="false"></span>'
+            : ''
+        }
         <p>${this.jsonUser.company || ''}</p>
       </div>
       <div class="user__data">
@@ -68,8 +75,31 @@ export default class GetUser {
       </div>
     </div>
     `;
-    profileSection.innerHTML = profileMarkup;
-    header.parentNode.insertBefore(profileSection, header.nextSibling);
+    this.profileSection.innerHTML = profileMarkup;
+    header.parentNode.insertBefore(this.profileSection, header.nextSibling);
+  }
+
+  createRepositories() {
+    this.repositorySection = document.querySelector('.repositories');
+    this.jsonRepositorie.forEach(repository => {
+      const repositoryMarkup = `
+      <div class="repositories__repositorie">
+      <div class="repositories__content">
+        <h2>${repository.name}</h2>
+        <p>${repository.description}</p>
+      </div>
+      <div class="repositories__info">
+        <span class="iconify" data-icon="dashicons:star-filled" data-inline="false"></span>
+        <p>${repository.stargazers_count}</p>
+        <span class="iconify" data-icon="bx:bx-git-branch" data-inline="false"></span>
+        <p>${repository.forks}</p>
+      </div>
+    </div>
+      `;
+      this.repositorySection.innerHTML += repositoryMarkup;
+      this.profileSection.parentNode.insertBefore(
+        this.repositorySection, this.profileSection.nextSibling);
+    });
   }
 
   init() {
