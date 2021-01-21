@@ -10,6 +10,8 @@
   @include device(mobile) {
     margin-top: $gap-medium;
   }
+
+  
   &__repositorie {
     width: 320px;
     min-height: 180px;
@@ -19,6 +21,10 @@
    display: flex;
    flex-direction: column;
    justify-content: space-between;
+   @include device(mobile) {
+    width: 90vw;
+  }
+  
     & h2 {
       font-size: em(18);
       font-weight: 700;
@@ -29,6 +35,7 @@
       line-height: em(18,14);
     }
   }
+  
   &__info {
     display: flex;
     gap: 10px;
@@ -36,6 +43,7 @@
     & .iconify {
       color: $purple-color;
     }
+    
   }
   &.active {
     display: flex;

@@ -322,10 +322,6 @@ a {
   }
 }
 
-.header .active {
-  display: inline-block;
-}
-
 .user {
   max-width: 850px;
   display: none;
@@ -346,9 +342,6 @@ a {
 @media screen and (max-width: 767px) {
   .user {
     gap: 30px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -368,6 +361,12 @@ a {
   overflow: hidden;
 }
 
+@media screen and (max-width: 767px) {
+  .user__avatar {
+    max-width: 180px;
+  }
+}
+
 .user__profile {
   padding: 0 30px;
 }
@@ -377,6 +376,24 @@ a {
   line-height: 1.66667em;
   font-weight: 700;
   color: #8752CC;
+}
+
+@media screen and (max-width: 767px) {
+  .user__profile {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
 }
 
 .user__profile > p {
@@ -389,6 +406,16 @@ a {
   display: flex;
   gap: 10px;
   margin-bottom: 8px;
+}
+
+@media screen and (max-width: 767px) {
+  .user__location {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
 }
 
 .user__location .iconify {
@@ -437,6 +464,14 @@ a {
   display: grid;
 }
 
+@media screen and (max-width: 767px) {
+  .user.active {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
 .repositories {
   display: none;
   gap: 20px;
@@ -478,6 +513,12 @@ a {
           justify-content: space-between;
 }
 
+@media screen and (max-width: 767px) {
+  .repositories__repositorie {
+    width: 90vw;
+  }
+}
+
 .repositories__repositorie h2 {
   font-size: 1.125em;
   font-weight: 700;
@@ -505,5 +546,22 @@ a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+.footer {
+  width: 100%;
+  padding: 20px;
+  background-color: #201F1F;
+  margin-top: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #B2B2B2;
 }
 /*# sourceMappingURL=main.css.map */

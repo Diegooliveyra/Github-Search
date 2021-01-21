@@ -1,0 +1,10 @@
+.footer {
+  width: 100%;
+  padding: $gap-small;
+  background-color: $dark-color;
+  margin-top: $gap-larger;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: $gray-color;
+}

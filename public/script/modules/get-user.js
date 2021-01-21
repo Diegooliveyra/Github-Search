@@ -111,7 +111,7 @@ export default class GetUser {
         loader.classList.add("hidden");
         this.profileSection.classList.add('active');
         this.repositorySection.classList.add('active');
-    }, 1000);
+    }, 2000);
   }
 
   init() {
