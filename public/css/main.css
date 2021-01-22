@@ -400,6 +400,7 @@ a {
 
 .user__profile > p {
   margin-bottom: 20px;
+  display: inline-block;
 }
 
 .user__location {
@@ -420,8 +421,13 @@ a {
   }
 }
 
+.user__location p {
+  display: inline-block;
+}
+
 .user__location .iconify {
   color: #8752CC;
+  display: inline-block;
 }
 
 .user__data {
@@ -433,6 +439,12 @@ a {
 
 .user__data .iconify {
   color: #8752CC;
+}
+
+@media screen and (max-width: 767px) {
+  .user__data {
+    margin-top: 10px;
+  }
 }
 
 .user__branchs {

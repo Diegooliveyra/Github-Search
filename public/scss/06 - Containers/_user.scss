@@ -37,6 +37,7 @@
     }
     & > p {
       margin-bottom: $gap-small;
+      display: inline-block;
     }
   }
   &__location {
@@ -47,8 +48,12 @@
       flex-wrap: wrap;
       justify-content: center;
     }
+    & p {
+      display: inline-block;
+    }
     & .iconify {
       color: $purple-color;
+      display: inline-block;
     }
   }
 
@@ -57,6 +62,9 @@
     gap: 10px;
     & .iconify {
       color: $purple-color;
+    }
+    @include device(mobile) {
+      margin-top: $gap-smaller;
     }
   }
   &__branchs {

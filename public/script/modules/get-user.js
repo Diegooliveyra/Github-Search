@@ -7,12 +7,14 @@ export default class GetUser {
   }
 
   getUserName() {
-    this.loader();
     this.userName = document.querySelector(this.inputValue).value;
-    this.userFetch();
-    this.starFetch();
-    this.repositorieFetch();
-    this.searchPage.classList.remove('active');
+    if (this.userName) {
+      this.loader();
+      this.userFetch();
+      this.starFetch();
+      this.repositorieFetch();
+      this.searchPage.classList.remove('active');
+    }
   }
 
   getUserEvent() {
@@ -47,17 +49,21 @@ export default class GetUser {
       <img src= ${this.jsonUser.avatar_url} />
     </div>
     <div class="user__profile">
-      <h2>${this.jsonUser.name}</h2>
-      <p>@${this.jsonUser.login}</p>
+      <h2>${this.jsonUser.name || ''}</h2>
+      <p>@${this.jsonUser.login || ''}</p>
       <div class="user__location">
+        <div>
         <span class="iconify" data-icon="fa-solid:map-marker-alt" data-inline="false"></span>
-        <p>${this.jsonUser.location}</p>
+        <p>${this.jsonUser.location || ''}</p>
+        </div>
+        <div>
         ${
           this.jsonUser.company
             ? '<span class="iconify" data-icon="ic:baseline-business-center" data-inline="false"></span>'
             : ''
         }
         <p>${this.jsonUser.company || ''}</p>
+        </div>
       </div>
       <div class="user__data">
         <span class="iconify" data-icon="fluent:people-team-28-filled" data-inline="false"></span>
