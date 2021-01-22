@@ -4,32 +4,20 @@
   align-items: center;
   padding: $gap-medium $gap-smaller;
   position: relative;
+  width: 100%;
   & img {
     max-width: 150px;
     @include device(mobile) {
       padding: $gap-smaller;
     }
   }
-  &__input input {
-      background: $background-color;
+  &__back {
+    display: inline-block;
+    & .iconify {
       color: $gray-color;
-      text-align: center;
-      border: 0;
-      border-bottom: 4px solid $purple-color;
-      font-size: em(16);
-      padding: $gap-smaller $gap-small;
-      margin-bottom: $gap-medium;
-      outline: none;
-      @include device(mobile) {
-        position: absolute;
-        display: none;
-        width: 100%;
-        bottom: -60px;
-        left: 0;
-        animation: down 1s ease forwards;
-      }
-    } & .active {
-      // display: inline-block;
+      width: 30px;
+      height: 30px;
     }
+  }
   
 }

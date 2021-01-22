@@ -53,10 +53,10 @@ export default class GetUser {
         <span class="iconify" data-icon="fa-solid:map-marker-alt" data-inline="false"></span>
         <p>${this.jsonUser.location}</p>
         ${
-  this.jsonUser.company
-    ? '<span class="iconify" data-icon="ic:baseline-business-center" data-inline="false"></span>'
-    : ''
-}
+          this.jsonUser.company
+            ? '<span class="iconify" data-icon="ic:baseline-business-center" data-inline="false"></span>'
+            : ''
+        }
         <p>${this.jsonUser.company || ''}</p>
       </div>
       <div class="user__data">
@@ -98,25 +98,32 @@ export default class GetUser {
     </div>
       `;
       this.repositorySection.innerHTML += repositoryMarkup;
-      this.profileSection.parentNode.insertBefore(
-        this.repositorySection, this.profileSection.nextSibling
-      );
+      this.profileSection.parentNode
+        .insertBefore(this.repositorySection, this.profileSection.nextSibling);
     });
   }
 
   loader() {
-    const loader = document.querySelector("[data-loader]");
-    const footer = document.querySelector(".footer");
-    loader.classList.remove("hidden");
+    const loader = document.querySelector('[data-loader]');
+    const footer = document.querySelector('.footer');
+    loader.classList.remove('hidden');
     setTimeout(() => {
-        loader.classList.add("hidden");
-        footer.classList.add('active');
-        this.profileSection.classList.add('active');
-        this.repositorySection.classList.add('active');
+      loader.classList.add('hidden');
+      footer.classList.add('active');
+      this.profileSection.classList.add('active');
+      this.repositorySection.classList.add('active');
     }, 2000);
+  }
+
+  backToinit() {
+    const buttonBack = document.querySelector('[data-back="button"]');
+    buttonBack.addEventListener('click', () => {
+      document.location.reload();
+    });
   }
 
   init() {
     this.getUserEvent();
+    this.backToinit();
   }
 }

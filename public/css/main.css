@@ -115,6 +115,19 @@ body {
   font-family: 'Roboto', Arial, Helvetica, sans-serif;
   min-height: 100vh;
   background-color: #232324;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 img {
@@ -243,7 +256,9 @@ a {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  height: 60vh;
+  height: 100vh;
+  width: 100%;
+  position: absolute;
 }
 
 .loader__spinner {
@@ -286,6 +301,7 @@ a {
           align-items: center;
   padding: 30px 10px;
   position: relative;
+  width: 100%;
 }
 
 .header img {
@@ -298,28 +314,14 @@ a {
   }
 }
 
-.header__input input {
-  background: #232324;
-  color: #B2B2B2;
-  text-align: center;
-  border: 0;
-  border-bottom: 4px solid #8752CC;
-  font-size: 1em;
-  padding: 10px 20px;
-  margin-bottom: 30px;
-  outline: none;
+.header__back {
+  display: inline-block;
 }
 
-@media screen and (max-width: 767px) {
-  .header__input input {
-    position: absolute;
-    display: none;
-    width: 100%;
-    bottom: -60px;
-    left: 0;
-    -webkit-animation: down 1s ease forwards;
-            animation: down 1s ease forwards;
-  }
+.header__back .iconify {
+  color: #B2B2B2;
+  width: 30px;
+  height: 30px;
 }
 
 .user {

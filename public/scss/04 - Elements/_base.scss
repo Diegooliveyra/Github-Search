@@ -6,7 +6,10 @@ body {
   font-family: 'Roboto', Arial, Helvetica, sans-serif;
   min-height: 100vh;
   background-color: $background-color;
- 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 }
 
 img {
