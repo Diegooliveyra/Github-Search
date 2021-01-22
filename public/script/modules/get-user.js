@@ -10,13 +10,14 @@ export default class GetUser {
     this.getUserName = this.getUserName.bind(this);
     this.initLoader = loader;
     this.createNewProfile = createProfile;
-    this.createRepositories = createRepositories
+    this.createRepositories = createRepositories;
   }
 
-  getUserName() {
+  getUserName(e) {
+    e.preventDefault();
     this.userName = document.querySelector(this.inputValue).value;
     if (this.userName) {
-      this.initLoader()
+      this.initLoader();
       this.userFetch();
       this.starFetch();
       this.repositorieFetch();
@@ -25,20 +26,20 @@ export default class GetUser {
   }
 
   getUserEvent() {
-    this.buttonSearch.addEventListener('click', this.getUserName);
+    this.buttonSearch.addEventListener('submit', this.getUserName);
   }
 
   async userFetch() {
     const response = await fetch(`https://api.github.com/users/${this.userName}`);
     this.jsonUser = await response.json();
-    this.createNewProfile(this.jsonUser)
+    this.createNewProfile(this.jsonUser);
   }
 
   async starFetch() {
     const response = await fetch(`https://api.github.com/users/${this.userName}/starred`);
     this.jsonStar = await response.json();
     this.totalStar = this.jsonStar.length;
-    this.createNewProfile(this.jsonUser, this.totalStar)
+    this.createNewProfile(this.jsonUser, this.totalStar);
   }
 
   async repositorieFetch() {
@@ -47,15 +48,7 @@ export default class GetUser {
     this.createRepositories(this.jsonRepositorie);
   }
 
-  backToinit() {
-    const buttonBack = document.querySelector('[data-back="button"]');
-    buttonBack.addEventListener('click', () => {
-      document.location.reload();
-    });
-  }
-
   init() {
     this.getUserEvent();
-    this.backToinit();
   }
 }
