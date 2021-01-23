@@ -2,6 +2,10 @@ import loader from './loader.js';
 import userFetch from './user-fetch.js';
 import repositorieFetch from './repositories-fetch.js';
 import backToinit from './backtoinit.js';
+import ScrollAnima from './scroll-anima.js';
+
+
+
 
 export default class GetUser {
   constructor(btn, inputValue) {
@@ -23,6 +27,10 @@ export default class GetUser {
       this.userFetch(this.url);
       this.repositorieFetch(this.url);
       this.searchPage.classList.remove('active');
+      setTimeout(() => {
+        const scrollAnima = new ScrollAnima('[data-anime="scroll"]');
+        scrollAnima.init();
+      }, 2000);
     }
   }
 
