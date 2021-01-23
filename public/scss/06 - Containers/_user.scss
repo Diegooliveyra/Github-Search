@@ -28,6 +28,9 @@
       line-height: em(40, 24);
       font-weight: 700;
       color: $purple-color;
+      @include device(mobile) {
+        text-align: center;
+      }
     }
     @include device(mobile) {
       display: flex;
