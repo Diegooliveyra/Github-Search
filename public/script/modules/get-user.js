@@ -1,5 +1,5 @@
 import createProfile from './create-profile.js';
-import createRepositories from './create-repositories.js'
+import createRepositories from './create-repositories.js';
 import loader from './loader.js';
 
 export default class GetUser {
@@ -30,22 +30,34 @@ export default class GetUser {
   }
 
   async userFetch() {
-    const response = await fetch(`https://api.github.com/users/${this.userName}`);
-    this.jsonUser = await response.json();
-    this.createNewProfile(this.jsonUser);
+    try {
+      const response = await fetch(`https://api.github.com/users/${this.userName}`);
+      this.jsonUser = await response.json();
+      this.createNewProfile(this.jsonUser);
+    } catch (error) {
+      console.log('Usuario não encontrado', error);
+    }
   }
 
   async starFetch() {
-    const response = await fetch(`https://api.github.com/users/${this.userName}/starred`);
-    this.jsonStar = await response.json();
-    this.totalStar = this.jsonStar.length;
-    this.createNewProfile(this.jsonUser, this.totalStar);
+    try {
+      const response = await fetch(`https://api.github.com/users/${this.userName}/starred`);
+      this.jsonStar = await response.json();
+      this.totalStar = this.jsonStar.length;
+      this.createNewProfile(this.jsonUser, this.totalStar);
+    } catch (error) {
+      console.log('Usuario não encontrado', error);
+    }
   }
 
   async repositorieFetch() {
-    const response = await fetch(`https://api.github.com/users/${this.userName}/repos`);
-    this.jsonRepositorie = await response.json();
-    this.createRepositories(this.jsonRepositorie);
+    try {
+      const response = await fetch(`https://api.github.com/users/${this.userName}/repos`);
+      this.jsonRepositorie = await response.json();
+      this.createRepositories(this.jsonRepositorie);
+    } catch (error) {
+      console.log('Repositorio não encontrado', error);
+    }
   }
 
   init() {

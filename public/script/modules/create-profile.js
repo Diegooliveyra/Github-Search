@@ -4,7 +4,7 @@ export default function createProfile(userData, userStar) {
   const header = document.querySelector('.header');
   const profileMarkup = `
     <div class="user__avatar">
-    <img src= ${userData.avatar_url} />
+    <img src= ${userData.avatar_url || '../public/assets/no-found.png'} />
   </div>
   <div class="user__profile">
     <h2>${userData.name || ''}</h2>
@@ -25,18 +25,18 @@ export default function createProfile(userData, userStar) {
     </div>
     <div class="user__data">
       <span class="iconify" data-icon="fluent:people-team-28-filled" data-inline="false"></span>
-      <p>${userData.followers}</p>
+      <p>${userData.followers || 0}</p>
       <span class="iconify" data-icon="fluent:people-team-28-regular" data-inline="false"></span>
-      <p>${userData.following}</p>
+      <p>${userData.following || 0}</p>
       <span class="iconify" data-icon="dashicons:star-filled" data-inline="false"></span>
-      <p>${userStar}</p>
+      <p>${userStar || 0}</p>
     </div>
   </div>
   <div class="user__branchs">
     <h3>Total Repositories</h3>
     <div class="user__total-branchs">
       <span class="iconify" data-icon="bx:bx-git-branch" data-inline="false"></span>
-      <p>${userData.public_repos}</p>
+      <p>${userData.public_repos || 0}</p>
     </div>
   </div>
   `;
