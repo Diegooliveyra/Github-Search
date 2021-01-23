@@ -1,7 +1,5 @@
 export default function createProfile(userData, userStar) {
   const profileSection = document.querySelector('.user');
-  profileSection.classList.add('user');
-  const header = document.querySelector('.header');
   const profileMarkup = `
     <div class="user__avatar">
     <img src= ${userData.avatar_url || '../public/assets/no-found.png'} />
@@ -41,5 +39,4 @@ export default function createProfile(userData, userStar) {
   </div>
   `;
   profileSection.innerHTML = profileMarkup;
-  header.parentNode.insertBefore(profileSection, header.nextSibling);
 }

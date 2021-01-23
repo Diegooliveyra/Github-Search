@@ -1,9 +1,9 @@
 export default function createRepositories(jsonRepositorie) {
   const repositorySection = document.querySelector('.repositories');
-  const profileSection = document.querySelector('.user');
-  jsonRepositorie.forEach((repository) => {
-    const repositoryMarkup = `
-    <div class="repositories__repositorie">
+
+  const listRepository = jsonRepositorie.reduce((acc, repository) => {
+    let accumulador = acc;
+    accumulador += `<div class="repositories__repositorie">
     <div class="repositories__content">
       <h2>${repository.name}</h2>
       <p>${repository.description || ''}</p>
@@ -14,10 +14,9 @@ export default function createRepositories(jsonRepositorie) {
       <span class="iconify" data-icon="bx:bx-git-branch" data-inline="false"></span>
       <p>${repository.forks}</p>
     </div>
-  </div>
-    `;
-    repositorySection.innerHTML += repositoryMarkup;
-    profileSection.parentNode
-      .insertBefore(repositorySection, profileSection.nextSibling);
-  });
+  </div>`;
+    return accumulador;
+  }, '');
+
+  repositorySection.innerHTML = listRepository;
 }
