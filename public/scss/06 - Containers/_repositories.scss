@@ -21,6 +21,13 @@
    display: flex;
    flex-direction: column;
    justify-content: space-between;
+   transition: ease .4s;
+   &:hover  {
+    background-color: $purple-color;
+  }
+  &:hover .iconify {
+    color: $gray-color;
+  }
    @include device(mobile) {
     width: 90vw;
   }
@@ -29,11 +36,25 @@
       font-size: em(18);
       font-weight: 700;
       margin-bottom: $gap-smaller;
+      & a {
+        color: $gray-color;
+      }
     }
     & p {
       font-size: em(14);
       line-height: em(18,14);
     }
+    &[data-anime="scroll"] {
+      opacity: 0;
+      transform: translate3d(-30px, -30px, 0);
+      transition: .5s;
+    }
+    
+    &[data-anime="scroll"].ativo {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+    
   }
   
   &__info {
@@ -41,6 +62,7 @@
     gap: 10px;
     font-size: em(16);
     & .iconify {
+      transition: ease .4s;
       color: $purple-color;
     }
     

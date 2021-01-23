@@ -1,6 +1,6 @@
 import createRepository from './create-repositories.js';
 
-const createRepositories = createRepository
+const createRepositories = createRepository;
 
 export default async function repositorieFetch(url) {
   try {

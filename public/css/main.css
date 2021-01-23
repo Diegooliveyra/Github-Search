@@ -525,6 +525,16 @@ a {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-transition: ease .4s;
+  transition: ease .4s;
+}
+
+.repositories__repositorie:hover {
+  background-color: #8752CC;
+}
+
+.repositories__repositorie:hover .iconify {
+  color: #B2B2B2;
 }
 
 @media screen and (max-width: 767px) {
@@ -539,9 +549,27 @@ a {
   margin-bottom: 10px;
 }
 
+.repositories__repositorie h2 a {
+  color: #B2B2B2;
+}
+
 .repositories__repositorie p {
   font-size: 0.875em;
   line-height: 1.28571em;
+}
+
+.repositories__repositorie[data-anime="scroll"] {
+  opacity: 0;
+  -webkit-transform: translate3d(-30px, -30px, 0);
+          transform: translate3d(-30px, -30px, 0);
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+.repositories__repositorie[data-anime="scroll"].ativo {
+  opacity: 1;
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
 }
 
 .repositories__info {
@@ -553,6 +581,8 @@ a {
 }
 
 .repositories__info .iconify {
+  -webkit-transition: ease .4s;
+  transition: ease .4s;
   color: #8752CC;
 }
 
