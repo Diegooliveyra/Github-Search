@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../public/css/main.css" />
+    <title>Github Search</title>
+  </head>
+  <body>
+    <header class="header container">
+      <div class="header__logo">
+        <a href="">
+
+          <img src="../public/assets/logoh.svg" alt="Logo Github Search" />
+        </a>
+      </div>
+      <a data-back="button" class="header__back" href="#">
+        <span class="iconify" data-icon="eva:arrow-back-fill" data-inline="false"></span>
+      </a>
+     
+    </header>
+    <section class="user container">
+    </section>
+
+    <section class="repositories container">
+    </section>
+
+    <footer class="footer">
+      <ul>
+        <li><a href="https://github.com/Diegooliveyra">
+          <span class="iconify" data-icon="codicon:github-inverted" data-inline="false"></span></li>
+        </a>
+        <li><a href="https://www.linkedin.com/in/diego-de-oliveira-brito/">
+
+          <span class="iconify" data-icon="cib:linkedin" data-inline="false"></span></li>
+        </a>
+      </ul>
+    </footer>
+
+    <div data-loader class="loader container hidden ">
+      <div class="loader__spinner"></div>
+    </div>
+
+    <div class="search active">
+      <div class="search__image">
+        <img src="../public/assets/logov.svg" alt="Logo Github Search" />
+      </div>
+      <form class="search__input">
+        <input data-search="name" type="text" placeholder="Enter user name" />
+        <button data-search="btn" class="btn">Search</button>
+      </form>
+    </div>
+
+    <script type="module" src="../public/script/script.js"></script>
+    <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+  </body>
+</html>

@@ -22,12 +22,7 @@
    flex-direction: column;
    justify-content: space-between;
    transition: ease .4s;
-   &:hover  {
-    background-color: $purple-color;
-  }
-  &:hover .iconify {
-    color: $gray-color;
-  }
+
    @include device(mobile) {
     width: 90vw;
   }
@@ -60,10 +55,20 @@
   &__info {
     display: flex;
     gap: 10px;
-    font-size: em(16);
+    font-size: em(14);
+    align-items: center;
     & .iconify {
       transition: ease .4s;
       color: $purple-color;
+    }
+    & a {
+      display: flex;
+      gap: 10px;
+      color: $gray-color;
+      & .iconify {
+        transition: ease .4s;
+        color: $purple-color;
+      }
     }
     
   }

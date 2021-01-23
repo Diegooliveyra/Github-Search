@@ -28,7 +28,7 @@ export default class GetUser {
       setTimeout(() => {
         const scrollAnima = new ScrollAnima('[data-anime="scroll"]');
         scrollAnima.init();
-      }, 2000);
+      }, 2500);
     }
   }
 

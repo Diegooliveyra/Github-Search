@@ -8,7 +8,7 @@ export default async function repositorieFetch(url) {
     this.jsonRepositorie = await response.json();
     setTimeout(()=>{
       createRepositories(this.jsonRepositorie);
-    },1000)
+    },500)
   } catch (error) {
     console.log('Usuario não encontrado', error);
   }

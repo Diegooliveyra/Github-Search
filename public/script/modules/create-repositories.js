@@ -18,6 +18,7 @@ export default function createRepositories(jsonRepositorie) {
       <p>${repository.language || ''}</p>
       <a href="${repository.svn_url}" target="_blank">
       <span class="iconify" data-icon="bx:bx-link-external" data-inline="false"></span>
+      View on Github
       </a>
     </div>
   </div>`;

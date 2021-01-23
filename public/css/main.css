@@ -541,14 +541,6 @@ a {
   transition: ease .4s;
 }
 
-.repositories__repositorie:hover {
-  background-color: #8752CC;
-}
-
-.repositories__repositorie:hover .iconify {
-  color: #B2B2B2;
-}
-
 @media screen and (max-width: 767px) {
   .repositories__repositorie {
     width: 90vw;
@@ -589,10 +581,27 @@ a {
   display: -ms-flexbox;
   display: flex;
   gap: 10px;
-  font-size: 1em;
+  font-size: 0.875em;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .repositories__info .iconify {
+  -webkit-transition: ease .4s;
+  transition: ease .4s;
+  color: #8752CC;
+}
+
+.repositories__info a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 10px;
+  color: #B2B2B2;
+}
+
+.repositories__info a .iconify {
   -webkit-transition: ease .4s;
   transition: ease .4s;
   color: #8752CC;
