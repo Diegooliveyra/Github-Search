@@ -9,7 +9,9 @@
   <body>
     <header class="header container">
       <div class="header__logo">
-        <img src="../public/assets/logoh.svg" alt="Logo Github Search" />
+        <a href="">
+          <img src="../public/assets/logoh.svg" alt="Logo Github Search" />
+        </a>
       </div>
       <a data-back="button" class="header__back" href="#">
         <span class="iconify" data-icon="eva:arrow-back-fill" data-inline="false"></span>
@@ -44,9 +46,9 @@
       <div class="search__image">
         <img src="../public/assets/logov.svg" alt="Logo Github Search" />
       </div>
-      <div class="search__input">
+      <form class="search__input">
         <input data-search="name" type="text" placeholder="Enter user name" />
-        <button data-search="btn" class="btn">Search</button>
+        <button type="submit" data-search="btn" class="btn">Search</button>
       </div>
     </div>
 
