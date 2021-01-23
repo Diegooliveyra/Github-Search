@@ -1,3 +1,4 @@
+/* eslint-disable import/extensions */
 import loader from './loader.js';
 import userFetch from './user-fetch.js';
 import repositorieFetch from './repositories-fetch.js';
