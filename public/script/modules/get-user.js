@@ -5,9 +5,6 @@ import repositorieFetch from './repositories-fetch.js';
 import backToinit from './backtoinit.js';
 import ScrollAnima from './scroll-anima.js';
 
-
-
-
 export default class GetUser {
   constructor(btn, inputValue) {
     this.buttonSearch = document.querySelector(btn);

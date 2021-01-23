@@ -5,3 +5,4 @@ const newUser = new GetUser('.search__input', '[data-search="name"]');
 newUser.init();
 
 
+

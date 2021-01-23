@@ -8,6 +8,7 @@ export default async function userFetch(url) {
     const responseStar = await fetch(`${url}/starred`);
     this.jsonStar = await responseStar.json();
     this.totalStar = this.jsonStar.length;
+    console.log('teste');
     createNewProfile(this.jsonUser, this.totalStar);
   } catch (error) {
     console.log('Usuario não encontrado', error);
