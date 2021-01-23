@@ -290,9 +290,7 @@ a {
 }
 
 .header {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -302,6 +300,8 @@ a {
   padding: 30px 10px;
   position: relative;
   width: 100%;
+  -webkit-animation: down 1s ease forwards;
+          animation: down 1s ease forwards;
 }
 
 .header img {
@@ -322,6 +322,12 @@ a {
   color: #B2B2B2;
   width: 30px;
   height: 30px;
+}
+
+.header.active {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .user {
