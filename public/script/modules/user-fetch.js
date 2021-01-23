@@ -1,7 +1,8 @@
+/* eslint-disable import/extensions */
 import createProfile from './create-profile.js';
 
 export default async function userFetch(url) {
-  const createNewProfile = createProfile
+  const createNewProfile = createProfile;
   try {
     const responseUser = await fetch(url);
     this.jsonUser = await responseUser.json();
